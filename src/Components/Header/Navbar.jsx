@@ -1,17 +1,20 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const links = (
     <div className="items-center flex justify-between">
       <li className="m-2">
-        <a href="">Home</a>
+        <a href="/">Home</a>
       </li>
-      <li className="m-2">
-        <a href="">Listed Books</a>
-      </li>
-      <li>
-        <a href="">Pages to Read</a>
-      </li>
+      <Link to="/about">
+        <li className="m-2">About</li>
+      </Link>
+      <Link to="/readList">
+        <li>
+          <a href="">Pages to Read</a>
+        </li>
+      </Link>
     </div>
   );
   return (
@@ -42,7 +45,9 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl font-bold">BookPoka</a>
+        <a href="/" className="btn btn-ghost text-xl font-bold">
+          BookPoka
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
